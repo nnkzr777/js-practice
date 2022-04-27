@@ -125,55 +125,81 @@
         //>まず0～5のランダムな数字を取得し、それに1を足す
         //の一文を読んで、それでやっとなるほどーってなりました！
 
-// [答え](samples/lesson02/lesson02-05.html)
+        // [答え](samples/lesson02/lesson02-05.html)
 
-// ## 課題6
+        // ## 課題6
 
-// 定数yourDiceを宣言し、1?6のランダムな数字で初期化します。  
-// 定数enemysDiceを宣言し、1?6のランダムな数字で初期化します。
+        {
+            // 定数yourDiceを宣言し、1?6のランダムな数字で初期化します。
+            // 定数enemysDiceを宣言し、1?6のランダムな数字で初期化します。
+            const yourDice = Math.floor(Math.random() * 6 + 1);
+            const enemysDice = Math.floor(Math.random() * 6 + 1);
 
-// コンソールにyourDiceとenemysDiceの値を表示した後、勝敗の結果を表示します。  
-// 勝敗は、サイコロの目の大きい方が勝ち、同じ場合は引き分けとします。
+            // コンソールにyourDiceとenemysDiceの値を表示した後、勝敗の結果を表示します。
+            // 勝敗は、サイコロの目の大きい方が勝ち、同じ場合は引き分けとします。
 
-// リロードすると値や結果が変わります。
+            // リロードすると値や結果が変わります。
 
-// 出力例1
+            // 出力例1
 
-// ```
-// あなたの目： 3
-// 敵の目： 6
-// あなたの負け
-// ```
-// 出力例2
+            // ```
+            // あなたの目： 3
+            // 敵の目： 6
+            // あなたの負け
+            // ```
+            // 出力例2
 
-// ```
-// あなたの目： 5
-// 敵の目： 1
-// あなたの勝ち
-// ```
-// 出力例3
+            // ```
+            // あなたの目： 5
+            // 敵の目： 1
+            // あなたの勝ち
+            // ```
+            // 出力例3
 
-// ```
-// あなたの目： 4
-// 敵の目： 4
-// 引き分け
-// ```
+            // ```
+            // あなたの目： 4
+            // 敵の目： 4
+            // 引き分け
+            // ```
+            console.log(`あなたの目：${yourDice}`);
+            console.log(`敵の目：${enemysDice}`);
+            if(yourDice > enemysDice){
+                console.log(`あなたの勝ち`);
+            }else if(yourDice < enemysDice){
+                console.log(`あなたの負け`);
+            }else{
+                console.log(`引き分け`);
+            }
+        }
 
-// [答え](samples/lesson02/lesson02-06.html)
+        // [答え](samples/lesson02/lesson02-06.html)
 
-// ## 課題7
+        // ## 課題7
 
-// 1から100までの数字を、順に以下のように出力してください。
+        // 1から100までの数字を、順に以下のように出力してください。
 
-// 1. 3で割り切れるときはFizzと表示する
-// 2. 5で割り切れるときはBuzzと表示する
-// 3. 3でも5でも割り切れるときはFizzBuzzと表示する
-// 4. 3でも5でも割り切れないときはそのままの数字を出力する
+        // 1. 3で割り切れるときはFizzと表示する
+        // 2. 5で割り切れるときはBuzzと表示する
+        // 3. 3でも5でも割り切れるときはFizzBuzzと表示する
+        // 4. 3でも5でも割り切れないときはそのままの数字を出力する
+        {
+            for(let i = 1; i <= 100; i++){
+                if(i%3 === 0 && i%5 === 0){
+                    console.log(`FizzBuzz`);
+                }else if(i%3 === 0){
+                    console.log(`Fizz`);
+                }else if(i%5 === 0){
+                    console.log(`Buzz`);
+                }else{
+                    console.log(i);
+                }
+            }
+        }
 
-// 出力例  
-// ![出力例](assets/images/lesson02-07-01.png)
+        // 出力例
+        // ![出力例](assets/images/lesson02-07-01.png)
 
-// [答え](samples/lesson02/lesson02-07.html)
+        // [答え](samples/lesson02/lesson02-07.html)
 
     </script>
 </body>
