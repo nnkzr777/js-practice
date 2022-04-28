@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson</title>
+    <script>
+    // ## 課題3
+    //
+    // 以下のように配列を宣言し、ランダムな要素をコンソールに表示してください。
+    //
+    // ```javascript
+    // const array = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+    // ```
+    //
+    // 出力例
+    //
+    //     ```
+    // 2番目の要素はみかんです
+    // ```
+    const array = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+    const index = Math.floor(Math.random() * array.length);
+    console.log(`${index}番目の要素は${array[index]}です`);
+    //[答え](samples/lesson03/lesson03-03.html)
+    //
+    // ### ヒント
+    //
+    // 課題2の「?番目」の部分をランダムな定数indexにしてみましょう。
+    </script>
+</head>
+<body>
+<h1>lesson3_3</h1>
+<p>ヒントを見ずに自分で定数indexを定義できた!(つけた名前もたまたまindexで同じだった)</p>
+</body>
+</html>
