@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson3-1</title>
+    <script>
+        // # レッスン3: 配列とループ
+        //
+        // ## 課題1
+        //
+        // 1 + 2 + 3 + 4 + ・・・と順に足していき、和がはじめて1000を超えるときの足した数字とその和を求めましょう。
+        // 途中の和もコンソールに表示してください。
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson03-01-01.png)
+        // ![出力例](assets/images/lesson03-01-02.png)
+        //
+        // ### ヒント
+        //
+        // 足す数を変数num、和を変数sumに覚えておき、
+        //
+        // 1. numを1ずつ増やす
+        // 2. sumにnumを足す
+        // 3. 表示する
+        //
+        // を繰り返すといいでしょう。
+        //
+        let num = 1;
+        let sum = 0;
+        while(sum < 1000){
+            //sum += num;
+            sum += num++;
+            console.log(`${num}: ${sum}`);
+            //num++;
+        }
+        console.log(`和がはじめて1000を超えるのは${num}を足したときで、その和は${sum}です`);
+
+
+
+        // [答え](samples/lesson03/lesson03-01.html)
+    </script>
+</head>
+<body>
+<h1>lesson3-1</h1>
+かじゃりコメント<br/>
+はじめは38行目でnum++;としていたが、
+そうすると「和がはじめて～」で表示されるnumが1多くなってしまうので、
+36行目で++演算子を使うよう修正した。
+</body>
+</html>
