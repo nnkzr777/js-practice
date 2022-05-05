@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson3_4</title>
+    <script>
+    // ## 課題4
+    //
+    // 以下のように配列を宣言し、すべての要素を順にコンソールに表示してください。
+    //
+    // ```javascript
+    // const array = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+    // ```
+    //
+    // 出力例
+    // ![出力例](assets/images/lesson03-04-01.png)
+    const array = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+    for(let index = 0; index < array.length; index++){
+        console.log(`${index}番目の要素は${array[index]}です`);
+    }
+    //
+    //     [答え](samples/lesson03/lesson03-04.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson3_4</h1>
+要素を出力するだけならforEachかなーと思ったけど、出力例を見て「X番目の要素は～」も出力しなきゃいけないことに気づいて普通のfor文に戻しました。(かじゃり)
+</body>
+
+</html>

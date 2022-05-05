@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson3_6</title>
+    <script>
+    // ## 課題6
+    //
+    // 以下のように配列を宣言し、配列内の数字の平均を求めましょう。
+    //
+    // ```javascript
+    // const array = [87, 96, 72, 88, 79];
+    // ```
+    //
+    // 出力例
+    //
+    //     ```
+    // 平均は84.4です
+    // ```
+    //
+    // ### ヒント
+    //
+    const array = [87, 96, 72, 88, 79];
+    {
+        const average = (array.reduce((previousValue,currentValue) => previousValue + currentValue))/array.length;
+        console.log(`平均は${average}です`);
+    }
+    // 変数sumを用意し、各要素を順に足していくと、最終的にsumは全要素の合計になります。
+    //
+    {
+        let sum = 0;
+        array.forEach(element => sum += element);
+        const average = sum/array.length;
+        console.log(`平均は${average}です`);
+    }
+    // [答え](samples/lesson03/lesson03-06.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson3_6</h1>
+ヒントを読まずに思いついたのがarray.reduceメソッドを使うことだったのですが、<br>
+ヒントを読んでそういえばこれはfor文を練習するためのレッスンだったと気づいてforEachで書き直しました。(かじゃり)
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson3_7</title>
+    <script>
+    // ## 課題7
+    //
+    // 以下のように配列を宣言し、配列内の数字の平均を求めた上で、平均以上の要素を出力しましょう。
+    //
+    // ```javascript
+    const array = [87, 96, 72, 88, 79];
+    // ```
+    //
+    // 出力例
+    // ![出力例](assets/images/lesson03-07-01.png)
+    //
+    let sum = 0;
+    for(const element of array){
+        sum += element;
+    }
+    const average = sum/array.length;
+    console.log(`平均は${average}です`);
+    for(let index = 0; index < array.length; index++){
+        if(array[index] >= average){
+            console.log(`${index}番目の要素${array[index]}は平均以上です`);
+        }
+    }
+    // ### ヒント
+    //
+    // 計算した平均値を定数averageに格納し、各要素と大小を比較してみましょう。
+    //
+    // [答え](samples/lesson03/lesson03-07.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson3_7</h1>
+<p>for文にも慣れてきた！(かじゃり)</p>
+</body>
+
+</html>
