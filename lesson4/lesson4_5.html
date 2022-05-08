@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson4_5</title>
+    <script>
+        // ## 課題5
+        //
+        // 1. 課題3の関数`dice`の定義をコピーして貼り付けます。
+        function dice () {
+            return Math.floor(Math.random() * 6 + 1);
+        }
+
+        // 2. `dice`を使って5回サイコロを振り、5回の目の平均値を出しましょう。
+        let sum = 0;
+        let i = 1;
+        for (; i <= 5; i++) {
+            const diceNumber = dice();
+            console.log(`${i}回目の目は${diceNumber}です`);
+            sum += diceNumber;
+        }
+        console.log(`${i - 1}回サイコロを投げたときの平均は${sum / (i - 1)}です`);
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson04-05-01.png)
+        //
+        // [答え](samples/lesson04/lesson04-05.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson4_5</h1>
+<p>最後に出力する文章で「5回サイコロを～」って出したいのにiがインクリメントされて「6回サイコロを～」になっちゃうよー<br>
+    と色々悩んだ末に(i-1)することで切り抜けました。答えを見たら変数iは使わずに解決されていたので、これで良かったのか～となりましたｗ</p>
+</body>
+
+</html>
