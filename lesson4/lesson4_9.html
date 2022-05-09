@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson4_9</title>
+    <script>
+        // ## 課題9
+        //
+        // 1. 第1引数`array`で与えられた配列内に第2引数`target`で与えられた要素と一致するものあるかを調べる関数`find`を定義しましょう。
+        // 2. 返り値は「あります」か「ありません」の文字のどちらかを返すようにしましょう。
+        /**
+         * `array`で与えられた配列内に第2引数`target`で与えられた要素と一致するものあるかを調べる
+         * @param {any[]} array
+         * @param {any} target
+         * @returns {string}
+         */
+        function find (array, target) {
+            for (const element of array) {
+                if (element === target) {
+                    return `あります`;
+                }
+            }
+            return `ありません`;
+        }
+
+        // 3. 以下の2つの配列を作成し、それぞれを`find`の第1引数にして呼び出しましょう。第2引数は好きなものにしてください。
+        // 4. 呼び出した結果を表示しましょう。
+        //
+        const array1 = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+        const array2 = [58, 91, 98, 96, 83];
+
+        console.log(`array1にりんごは${find(array1, `りんご`)}`);
+        console.log(`array2に90は${find(array2, 90)}`);
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson04-09-01.png)
+        // ![出力例](assets/images/lesson04-09-02.png)
+        //
+        // ### ヒント
+        //
+        // returnが実行されると、その関数はそこで処理をやめて、値を返します。
+        // 一つでも一致するものが見つかったら、その時点でreturnするといいですね。
+        //
+        // [答え](samples/lesson04/lesson04-09.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson4_9</h1>
+<p>console.logで表示する配列名と要素名も、与えた引数から表示できたら便利だなぁ(かじゃり)</p>
+</body>
+
+</html>

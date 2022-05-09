@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson4_10</title>
+    <script>
+        // ## 課題10
+        //
+        // 課題9の`find`は文字を返しましたが、`true`や`false`を返したほうが一般的です。
+        // 見つけたら`true`、見つからなかったら`false`を返すように変更しましょう。
+        // 呼び出す側でif文を使い、「あります」か「ありません」を表示するようにしましょう。
+        /**
+         * `array`で与えられた配列内に第2引数`target`で与えられた要素と一致するものあるかを調べる
+         * @param {any[]} array
+         * @param {any} target
+         * @returns {boolean}
+         */
+        function find (array, target) {
+            for (const element of array) {
+                if (element === target) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        const array1 = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+        const array2 = [58, 91, 98, 96, 83];
+
+        const findString = 'もも';
+        const findNumber = 58;
+
+        if (find(array1, `もも`)) {
+            console.log(`array1にももはあります`);
+        } else {
+            console.log(`array1にももはありません`);
+        }
+
+        if (find(array2, 96)) {
+            console.log(`array2に96はあります`);
+        } else {
+            console.log(`array2に96はありません`);
+        }
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson04-09-01.png)
+        // ![出力例](assets/images/lesson04-09-02.png)
+        //
+        // [答え](samples/lesson04/lesson04-10.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson4_10</h1>
+<p>答えを見たら、lesson4_9で思っていたこと(〇〇にXXはありません、の〇〇XX部分も引数を使って表示されたらいいなぁ)がクリアされていた..！(かじゃり)</p>
+</body>
+
+</html>

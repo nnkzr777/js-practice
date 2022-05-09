@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson4_8</title>
+    <script>
+        // ## 課題8
+        //
+        // 1. 引数`array`で与えられた配列内の数字で最大のものを求める関数`max`を定義しましょう。
+        function max (array) {
+            //return Math.max(...array);
+            //return Math.max.apply(null,array); 検証用
+        }
+
+        // 2. 以下の2つの配列を作成し、それぞれを`max`の引数にして呼び出しましょう。
+        // 3. 呼び出した結果を表示しましょう。
+        //
+        const array1 = [87, 96, 72, 88, 79];
+        const array2 = [58, 91, 98, 96, 83];
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson04-08-01.png)
+        //
+        // [答え](samples/lesson04/lesson04-08.html)
+        console.log(`array1の最大値は${max(array1)}です`);
+        console.log(`array1の最大値は${max(array2)}です`);
+    </script>
+</head>
+
+<body>
+<h1>lesson4_8</h1>
+<p>
+    最大値を求めるのにMath.maxメソッドを使いましたが、引数に配列を１つ与えただけではNaNが返ってきてしまいました。<br>
+    調べてみると、引数に複数の数値を渡さないといけないみたいですね..<br>
+    解決方法としては、...arrayとするか、Math.max.apply(null,array)とすればよいらしいことがわかりました。でも後者はなんかしっくりこない。
+    答えを見てみたら、なるほど普通にfor...ofでも最大値求められますね！(かじゃり)
+</p>
+</body>
+
+</html>
