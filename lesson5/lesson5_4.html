@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson5_4</title>
+    <script>
+        // ## 課題4
+        //
+        // 本を表すオブジェクトの配列`books`を次の要件を満たすように作成しましょう。
+        //
+        // 1. 本を表すオブジェクトは、`isbn13`と`title`と`author`をプロパティとしてもっています。
+        // 2. インターネットで適当な本を3冊検索して、それぞれの本のデータとして使ってください。
+        // 3. `books`をコンソールに出力してみましょう。
+        function Book ({author, isbn13, title}) {
+            this.author = author;
+            this.isbn13 = isbn13;
+            this.title = title;
+        }
+
+        const books = [];
+        books.push(new Book({author: '久保田 光則', isbn13: '978-4774189673', title: 'Webフロントエンド ハイパフォーマンス チューニング'}));
+        books.push(new Book({
+            author: '仙塲 大也',
+            isbn13: '978-4297127831',
+            title: '良いコード/悪いコードで学ぶ設計入門 ―保守しやすい 成長し続けるコードの書き方'
+        }));
+        books.push(new Book({
+            author: '上田 勲',
+            isbn13: '978-4798046143',
+            title: 'プリンシプル オブ プログラミング3年目までに身につけたい一生役立つ101の原理原則'
+        }));
+        console.log(books);
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson05-04-01.png)
+        // ![出力例](assets/images/lesson05-04-02.png)
+        //
+        // ### ヒント
+        //
+        // 1. 配列の要素にオブジェクトを使うときは、`[オブジェクト1, オブジェクト2, ...]`というふうに書きます。
+        // 2. オブジェクトは`{プロパティ名1: プロパティの値1, プロパティ名2: プロパティの値2, ...}`というふうに書きます。
+        // 3. 1行で書くと横に長くなるので、適切なインデントをつけて複数行で書きます。
+        // 4. コードを途中で改行しても、PCの中では、セミコロンまでを1行として認識されます。
+        //
+        // [答え](samples/lesson05/lesson05-04.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson5_4</h1>
+<p>bookの元になるオブジェクトを作ってからnewで追加していきました。<br>
+    ちなみに、意外とISBN-13が記載されてる本って見つからないものですね。(かじゃり)</p>
+</body>
+
+</html>

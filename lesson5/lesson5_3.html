@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson5_3</title>
+    <script>
+        // ## 課題3
+        //
+        // 今まで「配列」として使っていたものは、javascriptの中ではArrayオブジェクトとして扱われています。
+        // Arrayオブジェクトは、javascriptに標準で用意されたオブジェクトです。
+        // 様々なプロパティ、メソッドが予めセットされていますが、その中でも`length`プロパティと`push`メソッドは頻繁に使います。
+        //
+        // 次のような配列（Arrayオブジェクト）を定義します。
+        //
+        const arrayObject = ['バナナ', 'りんご', 'みかん', 'オレンジ', 'ぶどう'];
+        //
+        // 以下の操作を順に行うコードを書いてみましょう。
+        //
+        // 1. 配列の要素数を表示しましょう。
+        console.log(`追加前の要素数は${arrayObject.length}です`);
+        // 2. `push`メソッドを使って要素`もも`を追加しましょう。
+        arrayObject.push('もも');
+        // 3. 追加後の配列の長さを出力しましょう。
+        console.log(`追加後の要素数は${arrayObject.length}です`);
+        // 4. 配列の中身を順にすべて表示しましょう。
+        for (const item of arrayObject) {
+            console.log(item);
+        }
+        arrayObject.forEach((item) => console.log(item));
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson05-03-01.png)
+        //
+        // ### ヒント
+        //
+        // 1. 配列の要素数は`length`プロパティにセットされています。
+        // 2. `push`メソッドは、引数に追加したい要素をとり、配列の最後に要素を追加します。
+        //
+        // [答え](samples/lesson05/lesson05-03.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson5_3</h1>
+<p></p>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson5_7</title>
+    <script>
+        // ## 課題7
+        //
+        // 関数の引数としてオブジェクトを渡せることは、先に学びました。
+        // もちろん、Arrayオブジェクトのメソッド`push`の引数にオブジェクトを渡すこともできます。
+        //
+        function Book ({author, isbn13, title}) {
+            this.author = author;
+            this.isbn13 = isbn13;
+            this.title = title;
+        }
+
+        const books = [];
+        books.push(new Book({author: '久保田 光則', isbn13: '978-4774189673', title: 'Webフロントエンド ハイパフォーマンス チューニング'}));
+        books.push(new Book({
+            author: '仙塲 大也',
+            isbn13: '978-4297127831',
+            title: '良いコード/悪いコードで学ぶ設計入門 ―保守しやすい 成長し続けるコードの書き方'
+        }));
+        books.push(new Book({
+            author: '上田 勲',
+            isbn13: '978-4798046143',
+            title: 'プリンシプル オブ プログラミング3年目までに身につけたい一生役立つ101の原理原則'
+        }));
+
+        function dispBookDetail ({title, author, isbn13}) {
+            console.log(`===「${title}」===\n著者：${author}\nISBN-13：${isbn13}\n==========================`
+            );
+        }
+
+        // 1. pushメソッドを使って、課題4で作った`books`配列に新しい本を1冊追加してみましょう。
+        books.push({author: '山田 奈々', isbn13: '978-19840305771', title: 'マイブームはきなこおはぎ'});
+        // 2. 追加後の`books`配列の中身を`dispBookDetail`を使って出力しましょう。
+        // 3. `books`や`dispBookDetail`の定義はそれぞれからコピペしてください。
+        books.forEach((book) => dispBookDetail(book));
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson05-07-01.png)
+        //
+        // [答え](samples/lesson05/lesson05-07.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson5_7</h1>
+<p>pushで要素追加するの、lesson5_4で先取りしてしまいました(かじゃり)</p>
+</body>
+
+</html>

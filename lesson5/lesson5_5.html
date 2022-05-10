@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson5_5</title>
+    <script>
+        // ## 課題5
+        //
+        // 関数の引数にはオブジェクトを渡すこともできます。
+        //
+        // 1. 引数として本を表すオブジェクトを受け取り、その詳細を表示する関数`dispBookDetail`を定義しましょう。
+        function dispBookDetail ({title, author, isbn13}) {
+            console.log(`===「${title}」===\n著者：${author}\nISBN-13：${isbn13}\n==========================`
+            );
+        }
+
+        // 2. 課題1の`book`オブジェクトをコピーして、`dispBookDetail`の引数にして呼び出しましょう。
+        const book = {
+            isbn13: "978-4774184111",
+            title: "改訂新版JavaScript本格入門 ~モダンスタイルによる基礎から現場での応用まで",
+            author: "山田 祥寛"
+        };
+        dispBookDetail(book);
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson05-05-01.png)
+        //
+        // [答え](samples/lesson05/lesson05-05.html)
+
+    </script>
+</head>
+
+<body>
+<h1>lesson5_5</h1>
+<p>dispBookDetail関数に渡す引数を{}形式で書きましたが、そのままbookとしても良かったのですね～</p>
+<p>あと===を使っての文字列の位置合わせどうやるんだろうって思ってたので参考になりました。(複数行に分ければよかったのか)</p>
+</body>
+
+</html>

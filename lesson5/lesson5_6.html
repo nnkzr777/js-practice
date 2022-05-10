@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson5_6</title>
+    <script>
+        // ## 課題6
+        //
+        // 課題4で作った`books`配列の中の本を、課題5で作った`dispBookDetail`関数を使ってすべて表示しましょう。
+        // `books`や`dispBookDetail`の定義はそれぞれからコピペしてください。
+        function Book ({author, isbn13, title}) {
+            this.author = author;
+            this.isbn13 = isbn13;
+            this.title = title;
+        }
+        const books = [];
+        books.push(new Book({author: '久保田 光則', isbn13: '978-4774189673', title: 'Webフロントエンド ハイパフォーマンス チューニング'}));
+        books.push(new Book({
+            author: '仙塲 大也',
+            isbn13: '978-4297127831',
+            title: '良いコード/悪いコードで学ぶ設計入門 ―保守しやすい 成長し続けるコードの書き方'
+        }));
+        books.push(new Book({
+            author: '上田 勲',
+            isbn13: '978-4798046143',
+            title: 'プリンシプル オブ プログラミング3年目までに身につけたい一生役立つ101の原理原則'
+        }));
+
+        function dispBookDetail ({title, author, isbn13}) {
+            console.log(`===「${title}」===\n著者：${author}\nISBN-13：${isbn13}\n==========================`
+            );
+        }
+        books.forEach((book)=>dispBookDetail(book));
+        //
+        // 出力例
+        // ![出力例](assets/images/lesson05-06-01.png)
+        //
+        // [答え](samples/lesson05/lesson05-06.html)
+    </script>
+</head>
+
+<body>
+<h1>lesson5_6</h1>
+<p>自分の書き方でも同じように表示できた！うれしい！(かじゃり)</p>
+</body>
+
+</html>
