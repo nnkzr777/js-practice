@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson6_1</title>
+    <script>
+        // # レッスン6: HTMLとDOM
+        //
+        // ## 課題1
+        //
+        // 出力例のような表示になるように、HTMLを書きましょう。
+        // ※ この課題ではjavascriptは書きません。
+        //
+        // 仕様は以下の通りです。
+        //
+        // * CSSはHTMLファイル内に`<style>`タグを用いて記述する
+        // * h1, ul, liを使う
+        // * h1はデフォルト
+        // * ulにはid「book-list」を振り、cssはそのidを使って指定する
+        // * liは枠線を引き（画像参照）、マウスオーバーで背景色を変える
+        //
+        // 参考画像
+        // ![参考画像](assets/images/lesson06-01-02.png)
+        //
+        // 出力例
+        // ![出力例](images/lesson06-01-01.png)
+        // ![出力例](assets/images/lesson06-01-03.png)
+        //
+        // [答え](samples/lesson06/lesson06-01.html)
+    </script>
+    <style>
+        ul#book-list {
+            list-style: none;
+        }
+
+        ul#book-list li {
+            border: 1px solid #808080;
+            width: 500px;
+            border-radius: 0.5em;
+            margin: 10px;
+            padding: 1em;
+        }
+
+        ul#book-list li:hover {
+            background-color: #CECECE;
+        }
+    </style>
+</head>
+
+<body>
+<h1>lesson6_1</h1>
+<ul id="book-list">
+    <li>改訂新版JavaScript本格入門～モダンスタイルによる基礎から現場での応用まで</li>
+    <li>初めてのJavaScript 第3版 －ES2015以降の最新ウェブ開発</li>
+    <li>スラスラ読める JavaScript ふりがなプログラミング (ふりがなプログラミングシリーズ)</li>
+</ul>
+<p>セレクタの指定方法わからなすぎてめっちゃ調べました、、けど、答えと違うなぁ..</p>
+<p>idの前に全部ulつけちゃったけど、idがついてる要素には要素名をつけなくていいということかな。CSSはもっと練習しないとだめだなぁ(かじゃり)</p>
+</body>
+
+</html>

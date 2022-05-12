@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson6_2</title>
+
+</head>
+
+<body>
+<h1>lesson6_2</h1>
+<h2>自己紹介</h2>
+<div id="self-introduction"></div>
+<hr>
+<p>うわ～～～～もう全然わからなかったー！！！！ｲｲｲｲｲｰ</p>
+<p>scriptタグを最初headに入れてて動かない理由に気づくまで小1時間かかるし、h1の下にp要素を追加できなくて、間にdiv要素かませればいいと気づくまでまた小1時間悩んで、<br>
+    sectionもspanも使ったことないしでなんかもう出直してきます...(かじゃり)</p>
+<script>
+    // ## 課題2
+    //
+    // 下のようなオブジェクト定数`self`を定義して、自己紹介を表示するHTMLを作ってみましょう。
+    //
+    const self = {
+        name: 'かじゃり ななぴ',
+        age: 38
+    };
+    const content = document.getElementById('self-introduction');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const pArray = [p1, p2, p3];
+    pArray[0].textContent = `こんにちは！私の名前は${self.name}です！`;
+    pArray[1].textContent = `私は${self.age}歳です。`;
+    pArray[2].textContent = `よろしくお願いします！`;
+    for (const p of pArray) {
+        content.appendChild(p);
+    }
+    //
+    // 出力例
+    // ![出力例](assets/images/lesson06-02-01.png)
+    //
+    // [答え](samples/lesson06/lesson06-02.html)
+</script>
+</body>
+
+</html>
