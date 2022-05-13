@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson6_3</title>
+</head>
+
+<body>
+<h1>おみくじ</h1>
+<div id="helloName">
+    <label for="name">
+        <input type="text" id="name" maxlength="10" size="20" placeholder="お名前を入力">
+    </label>
+    ※10文字以内
+</div>
+<div id="result">
+    <input type="submit" id="submit" value="おみくじをひく！" onclick="returnResult();">
+</div>
+<script>
+    // ## 課題3
+    //
+    // おみくじを作りましょう。
+    //
+    // * おみくじは「大吉、中吉、小吉、凶、大凶」の5種類あります。
+    // * [switch-case文](https://www.javadrive.jp/javascript/if/index4.html)を使って、結果を振り分けてください。
+    // * 名前もjavascriptを使って出力してみましょう。
+    //
+    // 出力例
+    // ![出力例](assets/images/lesson06-03-01.png)
+    //
+    // [答え](samples/lesson06/lesson06-03.html)
+    const typeFortune = ['大吉', '中吉', '小吉', '凶', '大凶'];
+
+    /**
+     * おみくじの結果をランダムで取り出し、結果に応じたメッセージつきで返します
+     * @returns {string}
+     */
+    function drawFortune () {
+        const resultMessage = typeFortune[Math.floor(Math.random() * typeFortune.length)];
+        const templateMessage = `今日のあなたの運勢は${resultMessage}です！`;
+        switch (resultMessage) {
+            case '大吉':
+                return templateMessage + `(^▽^) すごくツイてる！`;
+            case'中吉':
+                return templateMessage + `(^-^) 良い１日になりそう！`;
+            case'小吉':
+                return templateMessage + `(´-\`*) ほのぼの過ごせそう！`;
+            case '凶':
+                return templateMessage + `(@_@;) 落とし穴に気を付けて！`;
+            case '大凶':
+                return templateMessage + `ฅ(=・ω・=)ฅネコチャンをなでなでしよう！`;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * おみくじを引いた後、結果を表示する為のDOM操作を行います
+     */
+    function returnResult () {
+        const name = document.getElementById('name');
+        if (name.value.length === 0) {
+            name.value = `ななし`;
+        }
+        const helloName = document.getElementById('helloName');
+        const result = document.getElementById('result');
+        //const submit = document.getElementById('submit');
+        const p1 = document.createElement('p');
+        const p2 = document.createElement('p');
+        p1.textContent = `こんにちは！${name.value}さん`;
+        p2.textContent = drawFortune();
+        helloName.innerHTML = "";
+        result.innerHTML = "";
+        helloName.appendChild(p1);
+        result.appendChild(p2);
+        // submit.value = `もういちど！`;
+        // result.insertBefore(p2, submit);
+
+    }
+</script>
+<hr>
+<p>わーっ時間かかったけどできたー嬉しい！デバッグしたり、機能を考えたり何を何に置き換えるか考えたり、楽しかったです。名前が空欄だったときはななしさんにしました。</p>
+<p>ただ、もう一回おみくじを引き直せるようにしたいなぁと思い、「もういちど！」ボタンを表示させるところまではいけたんですが、id=nameを含む要素を上書きして消してしまったことによりonClickイベントが動作しなくなってしまいました。どうすればnameを保持しておけるの～～と考え中...(オーバーロードっぽく書けばいいのか..?それとも単純にnameを画面に残しておく？)</p>
+</body>
+
+</html>
