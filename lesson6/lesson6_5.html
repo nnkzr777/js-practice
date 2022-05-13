@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson6_2</title>
+
+</head>
+
+<body>
+<h1>おみくじ</h1>
+<div>
+    <p>こんにちは！<span id="name">ほにゃらら</span>さん</p>
+    <p>今日のあなたの運勢は<span id="result">ほにゃららら</span>です！</p>
+</div>
+<script>
+    // ## 課題5
+    //
+    // 課題3のおみくじに色をつけてみましょう。
+    //
+    // * switch-case文を使って書いてみましょう。
+    // * 文字の色を変えるときは`element.style.color = '色'`を使います。
+    // * おみくじを運勢と色をセットにしたオブジェクトとして変数`omikuji`に代入します。
+    // * おみくじに代入するオブジェクトは以下です。
+    //
+    // // 大吉のとき
+    // omikuji = {
+    //     unsei: '大吉',
+    //     color: '#ddce35'
+    // };
+    //
+    // // 中吉のとき
+    // omikuji = {
+    //     unsei: '中吉',
+    //     color: '#df84b5'
+    // };
+    //
+    // // 小吉のとき
+    // omikuji = {
+    //     unsei: '小吉',
+    //     color: '#48c33d'
+    // };
+    //
+    // // 凶のとき
+    // omikuji = {
+    //     unsei: '凶',
+    //     color: '#af6710'
+    // };
+    //
+    // // 大凶のとき
+    // omikuji = {
+    //     unsei: '大凶',
+    //     color: '#000000'
+    // };
+    //
+    const yourName = `かじゃりななぴ`;
+
+    const unseis = [];
+    unseis.push({unsei: '大吉', color: '#ddce35'});
+    unseis.push({unsei: '中吉', color: '#df84b5'});
+    unseis.push({unsei: '小吉', color: '#48c33d'});
+    unseis.push({unsei: '凶', color: '#af6710'});
+    unseis.push({unsei: '大凶', color: '#000000'});
+
+    const name = document.getElementById('name');
+    const result = document.getElementById('result');
+    name.textContent = yourName;
+    const omikuji = unseis[Math.floor(Math.random() * unseis.length)];
+    switch (omikuji.unsei) {
+        case '大吉':
+            result.textContent = omikuji.unsei;
+            result.style.color = omikuji.color;
+            break;
+        case '中吉':
+            result.textContent = omikuji.unsei;
+            result.style.color = omikuji.color;
+            break;
+        case '小吉':
+            result.textContent = omikuji.unsei;
+            result.style.color = omikuji.color;
+            break;
+        case '凶':
+            result.textContent = omikuji.unsei;
+            result.style.color = omikuji.color;
+            break;
+        case '大凶':
+            result.textContent = omikuji.unsei;
+            result.style.color = omikuji.color;
+            break;
+        default:
+            break;
+    }
+    // 出力例
+    // ![出力例1](assets/images/lesson06-05-01.png)
+    // ![出力例2](assets/images/lesson06-05-02.png)
+    //
+    // [答え](samples/lesson06/lesson06-05.html)
+</script>
+<hr>
+<p>これでいいのかな..なんか..switch文使うと全てのケースに同じ文を書くことになってしまい、冗長な感じになっちゃった..こういう意図で良かったんだろうか..</p>
+<p>答えを見る→ああ～～オブジェクトの初期化をswicth文の中でやってるのか！
+    『おみくじを運勢と色をセットにしたオブジェクトとして変数`omikuji`に代入します』の文章を、すでに初期化された5セットのオブジェクトのうち、
+    ランダムで１つ変数`omikuji`に代入すればいいのかと勘違いしてました;;</p>
+</body>
+
+</html>

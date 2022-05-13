@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>lesson6_4</title>
+</head>
+
+<body>
+<h1>おみくじ</h1>
+<div>
+    <p>こんにちは！<span id="name">ほにゃらら</span>さん</p>
+</div>
+<div>
+    <p>今日のあなたの運勢は<span id="unsei">ほにゃららら</span>です！</p>
+</div>
+<script>
+    // ## 課題4
+    //
+    // 課題3のおみくじをswitch-case文やif文を使わずに書いてみましょう。
+    // 配列からランダムに1つの要素を選ぶことで、「大吉」や「小吉」などをランダムに出力することができます。
+    //
+    // 使う配列は以下です。
+    //
+    const unseis = ['大吉', '中吉', '小吉', '凶', '大凶'];
+    //
+    // 出力例
+    // ![出力例](assets/images/lesson06-03-01.png)
+    //
+    // [答え](samples/lesson06/lesson06-04.html)
+    const name = document.getElementById('name');
+    const unsei = document.getElementById('unsei');
+    name.textContent = `かじゃり ななぴ`;
+    unsei.textContent = unseis[Math.floor(Math.random() * unseis.length)];
+
+</script>
+<hr>
+<p>今回はフォームと送信ボタンつけなかったのでめっちゃシンプルな仕上がりになりました。
+    あっじゃあ&lt;div&gt;２つもいらんかった..あと変数の宣言とか色々省きすぎてしまった..反省(かじゃり)</p>
+</body>
+
+</html>
