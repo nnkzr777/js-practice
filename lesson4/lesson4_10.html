@@ -31,17 +31,19 @@
         const findString = 'もも';
         const findNumber = 58;
 
-        if (find(array1, `もも`)) {
-            console.log(`array1にももはあります`);
-        } else {
-            console.log(`array1にももはありません`);
-        }
+        // if (find(array1, `もも`)) {
+        //     console.log(`array1にももはあります`);
+        // } else {
+        //     console.log(`array1にももはありません`);
+        // }
 
-        if (find(array2, 96)) {
-            console.log(`array2に96はあります`);
-        } else {
-            console.log(`array2に96はありません`);
-        }
+        // if (find(array2, 96)) {
+        //     console.log(`array2に96はあります`);
+        // } else {
+        //     console.log(`array2に96はありません`);
+        // }
+        console.log(`array1に${findString}は${find(array1, findString)?'あります':'ありません'}`);
+        console.log(`array2に${findNumber}は${find(array2, findNumber)?'あります':'ありません'}`);
         //
         // 出力例
         // ![出力例](assets/images/lesson04-09-01.png)
@@ -54,6 +56,10 @@
 <body>
 <h1>lesson4_10</h1>
 <p>答えを見たら、lesson4_9で思っていたこと(〇〇にXXはありません、の〇〇XX部分も引数を使って表示されたらいいなぁ)がクリアされていた..！(かじゃり)</p>
+<p>
+    「あります/ありません」のように，条件によってちょっとだけ表示を変えたい時には，三項演算子が役に立ちます。<br>
+    もちろん，if文でもOKです。（きのこ）
+</p>
 </body>
 
 </html>
