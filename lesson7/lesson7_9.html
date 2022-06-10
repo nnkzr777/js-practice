@@ -93,6 +93,8 @@
             }
             //↑for..ofはいけるのに、なぜ↓forEachだとreturnが無視されるのかわからない..
             //returnが無視されて、ループは止まらない＆以降のステートメントも処理されてしまう。
+            // きのこコメント：return は無視されるというより，forEachが引数に取る関数は何も返さないものです。
+            // forEachの場合，alertを出せてもそこで処理が止まらず，次の要素の処理を始めてしまうようですね。
             // elements.forEach(value => {
             //     if (value.value.length === 0) {
             //         window.alert("タイトル、著者、isbn13の項目は全て入力必須です");
