@@ -30,6 +30,7 @@
     // ![出力例](assets/images/lesson06-03-01.png)
     //
     // [答え](samples/lesson06/lesson06-03.html)
+    let _name = '';
     const typeFortune = ['大吉', '中吉', '小吉', '凶', '大凶'];
 
     /**
@@ -60,28 +61,33 @@
      */
     function returnResult () {
         const name = document.getElementById('name');
-        if (name.value.length === 0) {
-            name.value = `ななし`;
+        if(!!name) {
+            if (name.value.length === 0) {
+                _name = `ななし`;
+            }
         }
         const helloName = document.getElementById('helloName');
         const result = document.getElementById('result');
-        //const submit = document.getElementById('submit');
+        const submit = document.getElementById('submit');
+        //console.log(submit);
         const p1 = document.createElement('p');
         const p2 = document.createElement('p');
-        p1.textContent = `こんにちは！${name.value}さん`;
+        p1.textContent = `こんにちは！${_name}さん`;
         p2.textContent = drawFortune();
         helloName.innerHTML = "";
         result.innerHTML = "";
         helloName.appendChild(p1);
         result.appendChild(p2);
-        // submit.value = `もういちど！`;
-        // result.insertBefore(p2, submit);
+        submit.value = `もういちど！`;
+        result.appendChild(submit);
 
     }
 </script>
 <hr>
 <p>わーっ時間かかったけどできたー嬉しい！デバッグしたり、機能を考えたり何を何に置き換えるか考えたり、楽しかったです。名前が空欄だったときはななしさんにしました。</p>
 <p>ただ、もう一回おみくじを引き直せるようにしたいなぁと思い、「もういちど！」ボタンを表示させるところまではいけたんですが、id=nameを含む要素を上書きして消してしまったことによりonClickイベントが動作しなくなってしまいました。どうすればnameを保持しておけるの～～と考え中...(オーバーロードっぽく書けばいいのか..?それとも単純にnameを画面に残しておく？)</p>
+<p>
+    nameをグローバルな変数にしておくとずっと残せますね。<br>
+    変数名がかぶったので「_name」にしました。（きのこ）</p>
 </body>
-
 </html>
